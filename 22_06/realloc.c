@@ -23,10 +23,21 @@ int main()
 	printf("enter the new size \n");
 	scanf("%d",&N);
 	ptr=(int*)realloc((int*)ptr,N);
-	printf("memory allocated by realloc \n enter the element\n");
-	for(i=0;i<N;i++)
+	if(ptr==NULL)
+	{
+		printf("memory is not allocated\n");
+		return 0;
+	}
+	else
+	{
+	printf("memory allocated by realloc \n");
+	if(N>n)
+		printf("enter %d element\n",N-n);
+	for(i=n;i<N;i++)
 		scanf("%d",&ptr[i]);
 	for(i=0;i<N;i++)
 		printf("%d ",ptr[i]);
+	printf("\n");
+	}
 	free(ptr);
 }
